@@ -1,0 +1,59 @@
+using System.Collections.Generic;
+using PiscesEngine;
+using PiscesEngine.UI;
+using UnityEngine;
+using UnityEngine.UI;
+namespace Game
+{
+    public partial class UIViewClassName
+    {
+        protected BindBehaviour bindBehaviour;
+        //#ViewFields#
+        public void Bind(GameObject root)
+        {
+            bindBehaviour = root.GetComponent<BindBehaviour>();
+            if (!bindBehaviour)
+            {
+                Debug.LogError($"{root.name}为找到BindBehaviour组件");
+                return;
+            }
+            //#GetViewFields#
+        }
+
+        //#UpdateViewFunc#
+    }
+
+    public partial class UIModelClassName
+    {
+        //#ModelFields#
+    }
+
+    public partial class UICtrlClassName : UIBaseCtrl
+    {
+        UIViewClassName view;
+        UIModelClassName model;
+        bool isRegister;
+        public UICtrlClassName()
+        {
+            model = new UIModelClassName();
+            view = new UIViewClassName();
+        }
+        void Register()
+        {
+            if (isRegister)
+                return;
+            isRegister = true;
+            //#RegisterViewFields#
+
+            //#RegisterModelFields#
+        }
+
+        void UnRegister()
+        {
+            //#UnRegisterViewFields#
+
+            //#UnRegisterModelFields#
+            isRegister = false;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "PiscesGame",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f5691e50b51117444859933543705374",
+        "GUID:80ecb87cae9c44d19824e70ea7229748"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
