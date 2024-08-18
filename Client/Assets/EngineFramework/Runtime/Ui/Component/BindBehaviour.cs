@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace PiscesEngine.UI
 {
-    public class BindBehaviour : LogicBehaviour
+    public class BindBehaviour : ActiveStateBehaviour
     {
         [SerializeField] protected string codePath;
         [SerializeField] protected PanelLayer panelLayer;
