@@ -13,25 +13,22 @@ namespace PiscesEngine
         /// <summary>
         /// Function definition for a state event.
         /// </summary>
-        public class ActiveStateEvent : BaseEngineEvent<GameObject> { }
-        public ActiveStateEvent onDestroy => m_destroyEvent;
-        public ActiveStateEvent onEnable => m_enableEvent;
-        public ActiveStateEvent onDisable => m_disableEvent;
-        private ActiveStateEvent m_destroyEvent = new ActiveStateEvent();
-        private ActiveStateEvent m_enableEvent = new ActiveStateEvent();
-        private ActiveStateEvent m_disableEvent = new ActiveStateEvent();
+        public class ActiveStateEvent : BaseEngineEvent { }
+        public ActiveStateEvent DestroyEvent { get; protected set; } = new ActiveStateEvent();
+        public ActiveStateEvent EnableEvent { get; protected set; } = new ActiveStateEvent();
+        public ActiveStateEvent DisableEvent { get; protected set; } = new ActiveStateEvent();
 
         protected void OnEnable()
         {
-            m_enableEvent.Invoke(gameObject);
+            EnableEvent.Invoke();
         }
         protected void OnDisable()
         {
-            m_disableEvent.Invoke(gameObject);
+            DisableEvent.Invoke();
         }
         protected void OnDestroy()
         {
-            m_destroyEvent.Invoke(gameObject);
+            DestroyEvent.Invoke();
         }
     }
 }

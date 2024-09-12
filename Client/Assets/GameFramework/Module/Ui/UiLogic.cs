@@ -8,53 +8,18 @@ using UnityEngine;
 
 namespace PiscesGame
 {
-    public enum UiLogicState
-    {
-        Opening,
-        Opened,
-        Closeing,
-        Closed,
-    }
-
     public abstract class UiLogic
     {
-        public virtual bool IsValid => gameObject != null;
+        
+        #region  Unity生命周期
+        protected abstract void OnEnable();
+        protected abstract void OnDisable();
+        protected abstract void OnDestroy();
+        #endregion
 
-        public virtual string UiPath => string.Empty;
-
-        protected GameObject gameObject;
-        protected Transform transform;
-
-        public void InitGo(GameObject go)
-        {
-            if (!go)
-            {
-                Debug.LogError("");
-                return;
-            }
-            gameObject = go;
-            transform = go.transform;
-        }
-
-        protected virtual void OnOpen()
-        {
-
-        }
-
-        protected virtual void OnClose()
-        {
-
-        }
-
-        protected virtual void OnVisible()
-        {
-
-        }
-
-        protected virtual void OnInvisible()
-        {
-            
-        }
-
+        #region  Ui生命周期
+        protected abstract void OnShow();
+        protected abstract void OnHide();
+        #endregion
     }
 }

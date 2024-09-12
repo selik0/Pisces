@@ -11,11 +11,11 @@ namespace PiscesEngine.UI
     public class BindBehaviour : ActiveStateBehaviour
     {
         [SerializeField] protected string codePath;
-        [SerializeField] protected PanelLayer panelLayer;
+        [SerializeField] protected UiLayerTag uiLayerTag;
         [SerializeField] protected ViewFieldInfo[] viewFieldInfos;
 
         public string CodePath { get => codePath; }
-        public PanelLayer PanelLayer { get => panelLayer; }
+        public UiLayerTag UiLayerTag { get => uiLayerTag; }
 #if UNITY_EDITOR
         [SerializeField] protected ModelFieldInfo[] modelFieldInfos;
 

@@ -1,11 +1,11 @@
 /****************
- *@class name:		BindingType
+ *@class name:		UiBindProperty
  *@description:		数据绑定的类型（类似于Object）
  *@author:			selik0
 *************************************************************************/
 namespace PiscesGame
 {
-    public class BindingType<T>
+    public class UiBindProperty<T>
     {
         //保存真正的值
         private T _value;
@@ -22,16 +22,16 @@ namespace PiscesGame
         //用event存储值改变的事件
         public event System.Action<T> OnValueChanged;
         //初始化
-        public BindingType(T value, System.Action<T> action)
+        public UiBindProperty(T value, System.Action<T> action)
         {
             _value = value;
             OnValueChanged += action;
         }
-        public BindingType(T value)
+        public UiBindProperty(T value)
         {
             _value = value;
         }
-        public BindingType()
+        public UiBindProperty()
         {
             _value = default;
         }
